@@ -37,10 +37,6 @@ public class VehicleSeasonPriceController {
             @RequestParam("vehicleType") String vehicleType,
             @RequestParam("season") String season
     ) {
-        if (vehicleType == null || season == null) {
-            // todo: throw exception
-        }
-
         Map<String, Object> response = new HashMap<>();
 
         Double rate = vehicleSeasonPriceService.getDailyRate(vehicleType, season);

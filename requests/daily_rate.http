@@ -1,4 +1,11 @@
-### GET request to example server
+### GET compact summer daily rate
 GET http://localhost:8001/vehicle-season-price/daily-rate?vehicleType=Compact&season=summer
 
-###
+### GET unknown summer daily rate
+GET http://localhost:8001/vehicle-season-price/daily-rate?vehicleType=Unknown&season=summer
+
+### GET compact unknown daily rate
+GET http://localhost:8001/vehicle-season-price/daily-rate?vehicleType=Compact&season=unknown
+
+### GET daily rate no query params
+GET http://localhost:8001/vehicle-season-price/daily-rate

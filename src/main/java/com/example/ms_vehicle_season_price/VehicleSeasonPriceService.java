@@ -31,9 +31,6 @@ public class VehicleSeasonPriceService {
         Optional<VehicleSeasonPrice> vehicleSeasonPrice = vehicleSeasonPriceRepository.findByType(vehicleType);
 
         return vehicleSeasonPrice.map(seasonPrice -> seasonPrice.getPriceBySeason(season))
-                .orElse(
-                        // todo: throw exception
-                        null
-                );
+                .orElseThrow(() -> new VehicleSeasonPriceNotFoundException(vehicleType, season));
     }
 }
